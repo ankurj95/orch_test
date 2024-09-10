@@ -21,6 +21,7 @@ jobs:
              interval: '100'
              timeout: '3600'
              #deployment-gate: '{"environment":"production","jobName":"Deploy"}'
+          run: echo true
   deploy:
      name: Deploy
      environment: production
