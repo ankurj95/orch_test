@@ -2,6 +2,9 @@
 
 name: CI
 
+env:
+  VERSION: "v5.1.0"
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -24,7 +27,7 @@ jobs:
     steps:
       - name: ServiceNow Change
         # For custom action based change, remove or comment the 'deployment-gate' configuration and the 'deploy' step
-        uses: ServiceNow/servicenow-devops-change@${{ vars.SN_DEVOPS_CHANGE_VERSION }}
+        uses: ServiceNow/servicenow-devops-change@${{ env.SN_DEVOPS_CHANGE_VERSION }}
         with:
           # Devops Integration Token
           devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
