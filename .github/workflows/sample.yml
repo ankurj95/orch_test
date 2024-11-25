@@ -21,13 +21,14 @@ jobs:
     # jobs that must complete successfully before this job will run
     # type of machine to run the job on
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [v5.3.0]  
     name: 'ServiceNow DevOps Change'
     steps:
       - name: ServiceNow Change
         # For custom action based change, remove or comment the 'deployment-gate' configuration and the 'deploy' step
-        uses: ServiceNow/servicenow-devops-change@${{ env.SN_DEVOPS_CHANGE_VERSION }}
-        env:
-          SN_DEVOPS_CHANGE_VERSION: v5.3.0
+        uses: ServiceNow/servicenow-devops-change@${{ matrix.version }}
         with:
           # Devops Integration Token
           devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
