@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: ServiceNow Change
         # For custom action based change, remove or comment the 'deployment-gate' configuration and the 'deploy' step
-        uses: ServiceNow/servicenow-devops-change@${{ secrets.SN_DEVOPS_CHANGE_VERSION }}
+        uses: ServiceNow/servicenow-devops-change@${{ vars.SN_DEVOPS_CHANGE_VERSION }}
         with:
           # Devops Integration Token
           devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
