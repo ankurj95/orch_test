@@ -23,7 +23,7 @@ jobs:
     #     distribution: 'temurin'
     #     cache: maven
     - name: Build with Maven
-      run: echo 'Build step in progress...' 
+      run: echo 'Build step in progress...'
 
   sonarScan:
    name: 'Sonar Scan'
