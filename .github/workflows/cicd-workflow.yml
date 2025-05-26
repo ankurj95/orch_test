@@ -50,7 +50,7 @@ jobs:
           # Github Context
           context-github: ${{ toJSON(github) }}
           # JUnit xml report file name with path
-          xml-report-filename: testng.xml
+          xml-report-filename: testing.xml
   # test:
   #   name: 'Test'
   #   needs: build
